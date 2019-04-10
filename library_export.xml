@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="down_view" model="ir.ui.view">
+    <field name="name">客户信息报表</field>
+    <field name="model">library.export</field>
+    <field name="arch" type="xml">
+        <form string="客户信息报表">
+            <footer>
+                <button string="下载" class="oe_highlight" name="action_export" type="object"/>
+                <button string="关闭" class="oe_link" special="cancel" />
+            </footer>
+        </form>
+    </field>
+    </record>
+
+    <act_window id="export_excel"
+                name="导出Excel"
+                src_model="library.book"
+                res_model="library.export"
+                view_mode="tree,form"
+                view_type="tree"
+                target="new"
+                multi="True"
+    />
+
+</odoo>
